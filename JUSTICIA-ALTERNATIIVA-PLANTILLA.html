@@ -5,24 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Solicitud de Mediación</title>
   <style>
+    @page {
+      size: letter;
+      margin: 2.5cm;
+    }
+
     body {
       margin: 0;
-      padding: 2cm;
+      padding: 0;
       font-family: Arial, sans-serif;
-      line-height: 1.5;
+      line-height: 1.4;
       background: #fff;
+      font-size: 11pt;
     }
+
     .content {
-      max-width: 21cm;
+      width: 100%;
+      max-width: 21.59cm; /* Ancho carta: 8.5in */
       margin: auto;
+      padding: 2.5cm;
+      box-sizing: border-box;
     }
+
     .logo {
       text-align: center;
       margin-bottom: 1em;
     }
+
     .logo img {
-      width: 120px;
+      width: 100px;
     }
+
     .subdirector {
       font-size: 11pt;
       font-weight: bold;
@@ -32,26 +45,37 @@
       padding: 0;
       text-align: left;
     }
+
     p {
       text-align: justify;
       text-indent: 1.5em;
       margin: 0 0 1em 0;
     }
+
     .firma {
       margin-top: 3em;
       text-align: center;
     }
+
     .firma span {
       display: block;
     }
+
     #FECHA {
       margin-top: 1em;
       font-style: italic;
     }
+
     #PROMOVENTE_FIRMA {
       margin-top: 2em;
       font-weight: bold;
       text-decoration: underline;
+    }
+
+    @media print {
+      body {
+        font-size: 11pt;
+      }
     }
   </style>
 </head>
@@ -111,7 +135,6 @@
       if (el) el.innerText = obtenerParametro(id);
     });
 
-    // Firma también se llena con PROMOVENTE
     document.getElementById("PROMOVENTE_FIRMA").innerText = obtenerParametro("PROMOVENTE");
   </script>
 </body>
